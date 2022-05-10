@@ -1,11 +1,7 @@
 import {TextWithImage} from "../AboutUs/components/TextWithImage/TextWithImage";
 import React from "react";
-import {BlockBaseProps} from "~/App";
+import {BlockBaseProps} from "../../App";
 import cn from "classnames";
-
-const url = 'https://uploads-ssl.webflow.com/623634729c194d6497a55433/623721bae0bb176347ecffd2_About-p-500.jpeg'
-// https://uploads-ssl.webflow.com/623634729c194d6497a55433/623721b9ad218708ab048b6a_Team-p-500.jpeg
-// https://uploads-ssl.webflow.com/623634729c194d6497a55433/62385e20954f4421c776bd7d_Image%3AAbout-Bg-T.png
 
 export type AboutUsBlockProps = BlockBaseProps
 
@@ -36,8 +32,8 @@ export const AboutUsBlock = ({contentClassName, wrapperClassName}: AboutUsBlockP
     return (
         <div className={wrapperClassNameFull}>
             <div className={contentClassNameFull}>
-                <TextWithImage imageClassName={'bg-aboutUsImg1'} texts={aboutUsTextsConfig}/>
-                <TextWithImage imageClassName={'bg-aboutUsImg2'} texts={teamTextsConfig} reversed/>
+                <TextWithImage imageClassName={'bg-aboutUsImg1'} title="About Intelas" texts={aboutUsTextsConfig}/>
+                <TextWithImage imageClassName={'bg-aboutUsImg2'} title="Our Team" texts={teamTextsConfig} reversed/>
             </div>
         </div>
     )

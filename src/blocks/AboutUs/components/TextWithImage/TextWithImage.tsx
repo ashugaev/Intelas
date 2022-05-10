@@ -11,10 +11,11 @@ interface TextWithImageItem {
 interface TextWithImageProps {
     imageClassName: string,
     reversed?: boolean,
+    title: string,
     texts: TextWithImageItem[]
 }
 
-export const TextWithImage = ({imageClassName, reversed, texts}: TextWithImageProps) => {
+export const TextWithImage = ({imageClassName, reversed, texts, title}: TextWithImageProps) => {
     const imageClassNameFull = cn("rounded-full w-60 h-60 round bg-aboutUsImg1 bg-cover flex-shrink-0", imageClassName);
     const wrapperClassName = cn("flex gap-10 flex-col md:flex-row", {
         'md:flex-row-reverse': reversed
@@ -23,10 +24,10 @@ export const TextWithImage = ({imageClassName, reversed, texts}: TextWithImagePr
     return (
         <div className={wrapperClassName}>
             <div>
-                <Text className={"mb-6"} text={"About Intelas"} variant={TextVariant.head2}/>
+                <Text className={"mb-6"} text={title} variant={TextVariant.head2}/>
                 {
-                    texts.map(({title, content}) => (
-                        <TextWithTitle title={title} content={content}/>
+                    texts.map((el) => (
+                        <TextWithTitle title={el.title} content={el.content}/>
                     ))
                 }
             </div>
