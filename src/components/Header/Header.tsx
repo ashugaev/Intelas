@@ -12,7 +12,7 @@ export const Header = ({
 
     return (
         <div>
-            <div className="relative bg-firstbrand">
+            <div className="relative">
             <div className="mx-auto max-w-7xl px-4 sm:px-6">
                 <div className="flex items-center justify-between py-6 md:space-x-10">
                 <div className="flex justify-start lg:w-0 lg:flex-1">
@@ -38,19 +38,19 @@ export const Header = ({
                             {menuItems.map(({href, text}, i) => (
                                 <MenuItem href={href} text={text}/>
                             ))}
-                            <Button text={'Contact Us'} onClick={() => window.location.href = '#lol'}/>                          
+                            <Button text={'Contact Us'} onClick={() => window.location.href = '#lol'}/>
                         </nav>
                         </div>
                     </div>
-            
-            
-                      {menuOpen && (  
+
+
+                      {menuOpen && (
                             <nav className="grid gap-y-8 px-5 pt-5 pb-6 bg-fourthbrand  md:hidden">
                                 {menuItems.map(({href, text}, i) => (
                                     <MenuItem href={href} text={text}/>
                                 ))}
 
-                                <Button text={button.text} onClick={() => window.location.href = button.href} className={'w-full'}/>
+                                <Button text={button.text} onClick={() => window.location.href = button.href} fluid={true}/>
                             </nav>
                         )}
                     </div>
