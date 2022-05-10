@@ -1,8 +1,0 @@
-{
-  "extends": [
-    "ts-standard",
-  ],
-  "rules": {
-    "comma-dangle": ["always", "always-multiline"],
-  }
-}
