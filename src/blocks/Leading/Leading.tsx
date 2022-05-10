@@ -1,10 +1,17 @@
 import React from "react";
 import {Button, Text, TextVariant} from '../../components'
+import {BlockBaseProps} from "../../App";
+import cn from "classnames";
 
-export const LeadingBlock = ({className}) => {
+type LeadingBlockProps = BlockBaseProps
+
+export const LeadingBlock = ({wrapperClassName, contentClassName}: LeadingBlockProps) => {
+    const wrapperClassNameFull = cn('bg-leadingBg bg-cover', wrapperClassName)
+    const contentClassNameFull = cn('flex items-center gap-10 max-w-7xl flex-grow', contentClassName);
+
     return (
-        <div className='md:py-20 p-4  bg-leadingBg bg-cover flex justify-center'>
-            <div className={'flex items-center gap-10 max-w-7xl flex-grow'}>
+        <div className={wrapperClassNameFull}>
+            <div className={contentClassNameFull}>
                 <div
                     className="flex min-h-max flex-col justify-center space-y-5 md:align-middle max-w-full md:max-w-sm">
                     <Text text={"Commercial Real Estate Data Management"} variant={TextVariant.head1}/>
